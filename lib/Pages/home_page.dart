@@ -35,10 +35,30 @@ class _HomePageState extends State<HomePage> {
 
 //weather animations
 
+//init state
+
+  @override
+  void initState() {
+    super.initState();
+    // fetch the weather
+    _fetchWeather();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey.shade800,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            //city name
+            Text(_weather?.cityName ?? "Loading City ..."),
+            //tempreture
+            Text("${_weather?.temperature.round()}°C")
+          ],
+        ),
+      ),
     );
   }
 }
