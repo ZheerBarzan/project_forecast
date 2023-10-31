@@ -46,23 +46,25 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey.shade800,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            //city name
-            Text(
-              _weather?.cityName ?? "Loading City ...",
-              style: const TextStyle(color: Colors.white),
-            ),
-            //tempreture
-            Text(
-              "${_weather?.temperature.round()}°C",
-              style: const TextStyle(color: Colors.white),
-            )
-          ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.grey.shade800,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              //city name
+              Text(
+                _weather?.cityName ?? "Loading City ...",
+                style: const TextStyle(color: Colors.white),
+              ),
+              //tempreture
+              Text(
+                "${_weather?.temperature.round()}°C",
+                style: const TextStyle(color: Colors.white),
+              )
+            ],
+          ),
         ),
       ),
     );
