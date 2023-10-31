@@ -55,7 +55,10 @@ class _HomePageState extends State<HomePage> {
             //city name
             Text(_weather?.cityName ?? "Loading City ..."),
             //tempreture
-            Text("${_weather?.temperature.round()}°C")
+            Text(
+              "${_weather?.temperature.round()}°C",
+              style: TextStyle(color: Colors.white),
+            )
           ],
         ),
       ),
