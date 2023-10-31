@@ -53,11 +53,14 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             //city name
-            Text(_weather?.cityName ?? "Loading City ..."),
+            Text(
+              _weather?.cityName ?? "Loading City ...",
+              style: const TextStyle(color: Colors.white),
+            ),
             //tempreture
             Text(
               "${_weather?.temperature.round()}°C",
-              style: TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.white),
             )
           ],
         ),
