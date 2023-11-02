@@ -35,6 +35,18 @@ class _HomePageState extends State<HomePage> {
   }
 
 //weather animations
+  String getWeatherAnimation(String? main) {
+    if (main == null) return "assets/sunny.json";
+
+    switch (main.toLowerCase()) {
+      case "clouds":
+      case "mist":
+        return "assets/cloud.json";
+      case "clear":
+        return "assets/sunny.json";
+    }
+    return main;
+  }
 
 //init state
 
@@ -61,11 +73,21 @@ class _HomePageState extends State<HomePage> {
               ),
               // animation
 
-              Lottie.asset("assets/rainy.json"),
-
+              Lottie.asset(getWeatherAnimation(_weather?.mainCondition)),
+              const SizedBox(
+                height: 10,
+              ),
               //tempreture
               Text(
                 "${_weather?.temperature.round()}°C",
+                style: const TextStyle(color: Colors.white),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              //weather condition
+              Text(
+                _weather?.mainCondition ?? "",
                 style: const TextStyle(color: Colors.white),
               )
             ],
