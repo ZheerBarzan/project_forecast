@@ -31,7 +31,7 @@ class WeatherService {
     // fetch the current location
 
     Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
+        desiredAccuracy: LocationAccuracy.best);
 
     // convert the Location into a List of placemark object
 
