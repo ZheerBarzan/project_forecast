@@ -42,6 +42,12 @@ class _HomePageState extends State<HomePage> {
       case "clouds":
       case "mist":
         return "assets/cloud.json";
+      case "rain":
+        return "assets/rainy.json";
+      case "snow":
+        return "assets/snow.json";
+      case "wind":
+        return "assets/wind.json";
       case "clear":
         return "assets/sunny.json";
     }
